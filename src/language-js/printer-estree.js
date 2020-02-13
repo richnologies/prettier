@@ -5128,7 +5128,7 @@ function printMemberChain(path, options, print) {
   //  * 3 or more chained calls.
   //  * Any group but the last one has a hard line.
   // If the last group is a function it's okay to inline if it fits.
-  if (
+  /* if (
     hasComment ||
     callExpressions.length >= 15 ||
     (((lastGroupDoc, lastGroupNode) =>
@@ -5141,7 +5141,7 @@ function printMemberChain(path, options, print) {
         .some(n => n.arguments.some(isFunctionOrArrowExpression)))
   ) {
     return group(expanded);
-  }
+  } */
 
   return concat([
     // We only need to check `oneLine` because if `expanded` is chosen
