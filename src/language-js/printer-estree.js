@@ -5130,13 +5130,7 @@ function printMemberChain(path, options, print) {
   // If the last group is a function it's okay to inline if it fits.
   if (
     hasComment ||
-    callExpressions.length >= 10 ||
-    printedGroups.slice(0, -1).some(willBreak) ||
-    /**
-     *     scopes.filter(scope => scope.value !== '').map((scope, i) => {
-     *       // multi line content
-     *     })
-     */
+    callExpressions.length >= 15 ||
     (((lastGroupDoc, lastGroupNode) =>
       isCallOrOptionalCallExpression(lastGroupNode) && willBreak(lastGroupDoc))(
       getLast(printedGroups),
